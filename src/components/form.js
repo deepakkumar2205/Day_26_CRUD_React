@@ -32,7 +32,7 @@ const CreateUser= () =>{
             
         }
       }, [id]);
-      useEffect(()=>{console.log(formValues)},[formValues])
+//       useEffect(()=>{console.log(formValues)},[formValues])
       const handleChange = (e)=>{
         setFormValues({...formValues,[e.target.name]:[e.target.value]})
       }
@@ -45,7 +45,7 @@ const CreateUser= () =>{
             },
             body: JSON.stringify(formValues)
           })
-            .then((data) => console.log(data))
+//             .then((data) => console.log(data))
             .then(() => {toast.success("produt updated successfully")
                         navigate("/")} );
          
@@ -57,7 +57,7 @@ const CreateUser= () =>{
             },
             body: JSON.stringify(formValues)
           })
-            .then((data) => console.log(data))
+//             .then((data) => console.log(data))
             .then(() => {toast.success("produt added successfully")
             navigate("/")
                 });
@@ -113,8 +113,7 @@ return (
         />
       </FormGroup>
     </Col>
-  </Row>
-  
+  </Row> 
   <FormGroup>
     <Label for="exampleAddress">
       Address 
@@ -157,8 +156,6 @@ return (
         />
       </FormGroup>
     </Col>
-
-    
   </Row>
   <FormGroup>
           <Label for="description">About</Label>
@@ -170,7 +167,6 @@ return (
                  onChange={handleChange}
                  />
         </FormGroup>
- 
   <Button onClick={handleSubmit}>{(id)?"Update":"Submit"}</Button>
 </Form>
 </Container>
